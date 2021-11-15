@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>Swagger | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Swagger学习目标：  了解Swagger的作用和盖帘 了解前后端分离 在SpringBoot中国集成Swagger  Swagger前后端分离 Vue + SpringBoot 后端时代：前端只用管理静态页面；html&gt;后端。模板引擎Jsp&gt;后端是主力 前后端分离时代：  后端：后端控制层(Controller)，服务层(Service)，数据访问层(DAO)【后端团队】 前端：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swagger">
+<meta property="og:url" content="http://example.com/2021/11/07/Swagger/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Swagger学习目标：  了解Swagger的作用和盖帘 了解前后端分离 在SpringBoot中国集成Swagger  Swagger前后端分离 Vue + SpringBoot 后端时代：前端只用管理静态页面；html&gt;后端。模板引擎Jsp&gt;后端是主力 前后端分离时代：  后端：后端控制层(Controller)，服务层(Service)，数据访问层(DAO)【后端团队】 前端：">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-15T15:11:18.819Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,36 +155,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Swagger" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Swagger
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/11/07/Swagger/" class="archive-article-date">
+
+        
+        <a href="/2021/11/07/Swagger/" class="archive-article-date">
   	<time datetime="2021-11-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/07/Swagger/">Swagger</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h1><p>学习目标：</p>
+<ul>
+<li>了解Swagger的作用和盖帘</li>
+<li>了解前后端分离</li>
+<li>在SpringBoot中国集成Swagger</li>
+</ul>
+<h2 id="Swagger-1"><a href="#Swagger-1" class="headerlink" title="Swagger"></a>Swagger</h2><p><strong>前后端分离</strong></p>
+<p>Vue + SpringBoot</p>
+<p>后端时代：前端只用管理静态页面；html&gt;后端。模板引擎Jsp&gt;后端是主力</p>
+<p>前后端分离时代：</p>
+<ul>
+<li>后端：后端控制层(Controller)，服务层(Service)，数据访问层(DAO)【后端团队】</li>
+<li>前端：前端控制层，视图层【前端团队】<ul>
+<li>伪造后端数据，json。已经存在了，不需要后端接口，前端工程依旧能够跑起来</li>
+</ul>
+</li>
+<li>前后端如何交互？===&gt;API</li>
+<li>前后端相互独立，松耦合；</li>
+<li>前后端甚至可以部署在不同的服务器上；</li>
+</ul>
+<p>产生一个问题：</p>
+<ul>
+<li>前后端集成联调，前端人员和后端人员无法做到“及时协商，尽早解决”，最终导致问题集中爆发；</li>
+</ul>
+<p>解决方案：</p>
+<ul>
+<li>首先指定schema【计划的提纲】，实时更新最新API,降低集成的风险；</li>
+<li>在Swagger之前：通过制定word计划API文档</li>
+<li>前后端分离：<ul>
+<li>测试后端接口：postman</li>
+<li>后端提供接口，需要实时更新最新的消息及需求改动！</li>
+</ul>
+</li>
+</ul>
+<p><strong>哪里有需求哪里就有市场，于是Swagger就应运而生了</strong></p>
+<p><strong>Swagger</strong></p>
+<ul>
+<li>号称世界上最流行的Api框架</li>
+<li>RestFul API 文档在线自动生成工具==&gt;Api文档与Api定义同步更新</li>
+<li>直接运行，可以在线测试API接口</li>
+<li>支持多种语言：（Java，Php）</li>
+</ul>
+<p>官网：<a target="_blank" rel="noopener" href="https://swagger.io/">https://swagger.io/</a></p>
+<h2 id="SpringBoot集成Swagger"><a href="#SpringBoot集成Swagger" class="headerlink" title="SpringBoot集成Swagger"></a>SpringBoot集成Swagger</h2><ol>
+<li><p>新建一个SpringBoot，web项目</p>
+</li>
+<li><p>导入相关依赖，在项目使用Swagger需要依赖jar包 Springbox(Swagger3)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<ol start="3">
+<li>编写一个Hello工程</li>
+<li>Application上面加入@EnableOpenApi注解</li>
+<li>配置Swagger==&gt; Config</li>
+<li>Swagger3的访问路径由port/swagger-ui.html改成了port/swagger-ui/ 或port/swagger-ui/index.html</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span><span class="comment">//声明配置类</span></span><br><span class="line"><span class="meta">@EnableOpenApi</span><span class="comment">//开启swagger3</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//配置Swagger的Docket的bean实例</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//配置swagger信息=apiinfo</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//作者信息</span></span><br><span class="line">        Contact contact = <span class="keyword">new</span> Contact(<span class="string">&quot;AYAN&quot;</span>,<span class="string">&quot;https://dayanhan.github.io/&quot;</span>,<span class="string">&quot;1738340585@qq.com&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfo(</span><br><span class="line">                <span class="string">&quot;AYAN的SwaggerAPI文档&quot;</span>,</span><br><span class="line">                <span class="string">&quot;不成功便成仁&quot;</span>,</span><br><span class="line">                <span class="string">&quot;v1.0&quot;</span>,</span><br><span class="line">                <span class="string">&quot;https://dayanhan.github.io/&quot;</span>,</span><br><span class="line">                contact,</span><br><span class="line">                <span class="string">&quot;Apache 2.0&quot;</span>,</span><br><span class="line">                <span class="string">&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;</span>,</span><br><span class="line">                <span class="keyword">new</span> ArrayList()</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="swagger配置扫描接口"><a href="#swagger配置扫描接口" class="headerlink" title="swagger配置扫描接口"></a>swagger配置扫描接口</h2><p>Docket.select ()</p>
+<p>.enable(true)//enable是否启动Swagger，如果为false，则Swagger不能在浏览器中访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span><span class="comment">//声明配置类</span></span><br><span class="line"><span class="meta">@EnableOpenApi</span><span class="comment">//开启swagger3</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//配置Swagger的Docket的bean实例</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(apiInfo())</span><br><span class="line">                .enable(<span class="keyword">true</span>)<span class="comment">//enable是否启动Swagger，如果为false，则Swagger不能在浏览器中访问</span></span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//RequestHandlerSelectors,配置要扫描接口的方式</span></span><br><span class="line">                <span class="comment">//basePackage，指定要扫描的包</span></span><br><span class="line">                <span class="comment">//any()，扫描全部</span></span><br><span class="line">                <span class="comment">//none(),不扫描</span></span><br><span class="line">                <span class="comment">//withClassAnnotation，扫描类上的注解，参数是一个注解类的反射对象</span></span><br><span class="line">                <span class="comment">//withMethodAnnotation，扫描方法上的注解</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.ayan.swagger.controller&quot;</span>))</span><br><span class="line">                <span class="comment">//path(),过滤什么路径,ant(&quot;&quot;),过滤指定路径就扫描不到了</span></span><br><span class="line">                <span class="comment">//.paths(PathSelectors.ant(&quot;/ayan/**&quot;))</span></span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置API文档分组"><a href="#配置API文档分组" class="headerlink" title="配置API文档分组"></a>配置API文档分组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.groupName(<span class="string">&quot;阿焱&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如何配置多个分组；多个Docket 实例即可，但是不要重名！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket1</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket2</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket3</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>实体类配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ayan.swagger.pojo;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModel;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiModelProperty;</span><br><span class="line"><span class="comment">//@Api(注释)</span></span><br><span class="line"><span class="meta">@ApiModel(&quot;用户实体类&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;用户名&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String username;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;密码&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String password;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>controller配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ayan.swagger.controller;</span><br><span class="line"><span class="keyword">import</span> com.ayan.swagger.pojo.User;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.Api;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiOperation;</span><br><span class="line"><span class="keyword">import</span> io.swagger.annotations.ApiParam;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Api(tags = &quot;Hello控制器类&quot;)</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/hello&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/hello&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello world!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//只要我们的接口中，返回值中存在实体类，他就会被扫描到swagger中</span></span><br><span class="line">    <span class="meta">@PostMapping(value = &quot;/user&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">user</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> User();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//Operation接口,不是放在类上的，是方法</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;Hello2方法&quot;)</span></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/hello2&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello2</span><span class="params">(<span class="meta">@ApiParam(&quot;用户名&quot;)</span> String username)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>+username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//Operation接口,不是放在类上的，是方法</span></span><br><span class="line">    <span class="meta">@ApiOperation(&quot;post提交用户测试方法&quot;)</span></span><br><span class="line">    <span class="meta">@PostMapping(value = &quot;/postuser&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">postuser</span><span class="params">(<span class="meta">@ApiParam(&quot;用户信息&quot;)</span> <span class="meta">@RequestBody</span> User user)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ol>
+<li>我们可以通过Swagger给一些比较难理解的属性或者接口，增加注释信息</li>
+<li>接口文档实时更新</li>
+<li>可以在线测试</li>
+</ol>
+<p>Swagger是一个优秀的工具，几乎所有大公司都有使用它</p>
+<p>【注意点】在正式发布的时候，关闭Swagger！！！出于安全考虑。而且节省运行的内存；</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,84 +296,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/07/Swagger/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/11/06/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2021-11-06T10:26:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/11/06/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客文章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/06/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/11/06/hello-world/" class="archive-article-date">
-  	<time datetime="2021-11-06T10:18:02.882Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/06/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -291,8 +418,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
